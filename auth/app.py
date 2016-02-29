@@ -113,12 +113,16 @@ def login_required(f):
     return decorated_function
 
 
-# Routes
-
+# ------ Routes
+'''
 @app.route('/')
 def index():
     return send_file(os.path.join(client_path, 'index.html'))
+'''
 
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
 
 @app.route('/api/me')
 @login_required
@@ -413,4 +417,4 @@ def bitbucket():
 
 
 if __name__ == '__main__':
-    app.run(port=3000)
+    app.run(host= '0.0.0.0', port=80)
