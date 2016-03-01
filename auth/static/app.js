@@ -4,11 +4,11 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
       .state('home', {
         url: '/',
         controller: 'HomeCtrl',
-        templateUrl: 'partials/home.html'
+        templateUrl: 'static/partials/home.html'
       })
       .state('login', {
         url: '/login',
-        templateUrl: 'partials/login.html',
+        templateUrl: 'static/partials/login.html',
         controller: 'LoginCtrl',
         resolve: {
           skipIfLoggedIn: skipIfLoggedIn
@@ -16,7 +16,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
       })
       .state('signup', {
         url: '/signup',
-        templateUrl: 'partials/signup.html',
+        templateUrl: 'static/partials/signup.html',
         controller: 'SignupCtrl',
         resolve: {
           skipIfLoggedIn: skipIfLoggedIn
@@ -29,7 +29,7 @@ angular.module('MyApp', ['ngResource', 'ngMessages', 'ngAnimate', 'toastr', 'ui.
       })
       .state('profile', {
         url: '/profile',
-        templateUrl: 'partials/profile.html',
+        templateUrl: 'static/partials/profile.html',
         controller: 'ProfileCtrl',
         resolve: {
           loginRequired: loginRequired

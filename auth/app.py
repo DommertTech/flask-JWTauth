@@ -18,7 +18,7 @@ from jwt import DecodeError, ExpiredSignature
 current_path = os.path.dirname(__file__)
 client_path = os.path.abspath(os.path.join(current_path, '..', '..', 'client'))
 
-app = Flask(__name__, static_url_path='', static_folder=client_path)
+app = Flask(__name__)
 app.config.from_object('config')
 
 db = SQLAlchemy(app)
@@ -114,6 +114,7 @@ def login_required(f):
 
 
 # ------ Routes
+
 '''
 @app.route('/')
 def index():
@@ -123,6 +124,7 @@ def index():
 @app.route('/')
 def index():
     return app.send_static_file('index.html')
+
 
 @app.route('/api/me')
 @login_required
@@ -417,4 +419,4 @@ def bitbucket():
 
 
 if __name__ == '__main__':
-    app.run(host= '0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=80, debug=True)
